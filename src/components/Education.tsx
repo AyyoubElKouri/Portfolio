@@ -6,7 +6,7 @@ export function Education() {
 			<h2 className="text-3xl italic"> Education </h2>
 			<hr className="border-zinc-800 mt-1 mb-7" />
 
-			<article className="flex flex-col gap-6">
+			<article className="flex flex-col gap-10">
 				{EDUCATION.map((edu) => (
 					<div
 						key={edu.schoolName}
@@ -15,7 +15,7 @@ export function Education() {
 						<img
 							src={edu.schoolLogo}
 							alt={edu.schoolName}
-							className="w-12 h-12 object-cover rounded-full mb-2"
+							className="w-12 h-12 object-cover rounded-sm mb-2"
 						/>
 						<div>
 							<h3 className="text-xl italic text-zinc-100">

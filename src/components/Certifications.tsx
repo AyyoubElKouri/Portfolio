@@ -6,7 +6,7 @@ export function Certifications() {
 			<h2 className="text-3xl italic"> Certifications </h2>
 			<hr className="border-zinc-800 mt-1 mb-7" />
 
-			<article className="flex flex-col gap-6">
+			<article className="flex flex-col gap-10">
 				{CERTIFICATIONS.map((cert) => (
 					<div
 						key={cert.title}

@@ -17,7 +17,7 @@ export default function Home() {
 	return (
 		<div className="min-w-svh min-h-svh pt-15 flex flex-col bg-zinc-900">
 			<NameAndPhoto />
-			<main className="w-full p-20 flex flex-col gap-20">
+			<main className="w-full p-40 py-25 flex flex-col gap-20">
 				<AboutMe />
 				<Experience />
 				<Projects />
