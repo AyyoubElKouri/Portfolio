@@ -1,6 +1,13 @@
 import { CERTIFICATIONS } from "../data";
 
 export function Certifications() {
+	// Check if CERTIFICATIONS array is empty, return null to avoid rendering the section
+	const isEmptyCertifications = CERTIFICATIONS.length === 0;
+	if (isEmptyCertifications) {
+		return null;
+	}
+
+	// Render the Certifications section with CERTIFICATIONS content
 	return (
 		<section className="text-zinc-200">
 			<h2 className="text-3xl italic"> Certifications </h2>
@@ -16,6 +23,9 @@ export function Certifications() {
 							src={cert.issuerLogo}
 							alt={cert.issuer}
 							className="w-12 h-12 object-cover rounded-sm mb-2"
+							onError={(e) => {
+								e.currentTarget.src = "/images/default-certification.png";
+							}}
 						/>
 						<div>
 							<h3 className="text-xl italic text-zinc-100">{cert.title}</h3>

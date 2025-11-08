@@ -1,6 +1,13 @@
 import { EDUCATION } from "../data";
 
 export function Education() {
+	// Check if EDUCATION array is empty, return null to avoid rendering the section
+	const isEmptyEducation = EDUCATION.length === 0;
+	if (isEmptyEducation) {
+		return null;
+	}
+
+	// Render the Education section with EDUCATION content
 	return (
 		<section className="text-zinc-200">
 			<h2 className="text-3xl italic"> Education </h2>
@@ -16,6 +23,9 @@ export function Education() {
 							src={edu.schoolLogo}
 							alt={edu.schoolName}
 							className="w-12 h-12 object-cover rounded-sm mb-2"
+							onError={(e) => {
+								e.currentTarget.src = "/images/default-school.png";
+							}}
 						/>
 						<div>
 							<h3 className="text-xl italic text-zinc-100">

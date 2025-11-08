@@ -1,5 +1,5 @@
-import type { ProjectType } from "../data";
 import { PROJECTS } from "../data";
+import type { ProjectType } from "../types";
 
 function Project({ project }: { project: ProjectType }) {
 	return (
@@ -8,6 +8,9 @@ function Project({ project }: { project: ProjectType }) {
 				src={project.image}
 				alt={project.title}
 				className="w-12 h-12 object-cover rounded-sm mb-2"
+				onError={(e) => {
+					e.currentTarget.src = "/images/default-project.jpeg";
+				}}
 			/>
 
 			<div>
@@ -28,6 +31,13 @@ function Project({ project }: { project: ProjectType }) {
 	);
 }
 export function Projects() {
+	// Check if PROJECTS array is empty, return null to avoid rendering the section
+	const isEmptyProjects = PROJECTS.length === 0;
+	if (isEmptyProjects) {
+		return null;
+	}
+
+	// Render the Projects section with PROJECTS content
 	return (
 		<section className="text-zinc-200">
 			<h2 className="text-3xl italic"> Projects </h2>

@@ -1,57 +1,26 @@
-export interface ProjectType {
-	image: string;
-	title: string;
-	description: string;
-	actionLabel?: string;
-	actionLink?: string;
-}
+import type {
+	CertificationType,
+	ContactType,
+	EducationType,
+	ExperienceType,
+	ProjectType,
+	SkillType,
+} from "./types";
 
-export interface ExperienceType {
-	title: string;
-	companyName: string;
-    companyLogo: string;
-	type: string;
-	startDate: string;
-	endDate: string | null;
-	mission?: string;
-}
+/*************************************************************************************************************
+ * All the data used in the portfolio is defined in this file.
+ * Modify the values below to update the content of your portfolio.
+ *
+ * If a section has no data (e.g., empty BIO, no PROJECTS, etc.), that section will not be rendered.
+ *************************************************************************************************************/
 
-export interface EducationType {
-	schoolName: string;
-	schoolLogo: string;
-	degree: string;
-	fieldOfStudy: string;
-	startDate: string;
-	endDate: string | null;
-}
-
-export interface CertificationType {
-	title: string;
-	issuer: string;
-	issuerLogo: string;
-	issueDate: string;
-	certificationLink: string;
-	readMoreLink?: string;
-}
-
-export interface SkillType {
-	name: string;
-	description: string;
-}
-
-export interface ContactType {
-	email: string;
-	phone?: string;
-	linkedin?: string;
-	github?: string;
-	twitter?: string;
-}
-
+// User's name ***********************************************************************************************
 export const USER: string = "Ayyoub El kouri";
 
-export const BIO: string =
-	`I am a software engineering student specialized in backend architecture, API design, and cloud-based systems, with a hand-on experience in building scalable applications using: \nReact/Angular for interactive user interfaces, TypeScript for type-safe coding, Java/Spring Boot for robust server-side applications, PostgreSQL/Oracle databases for efficient data management, docker/Kubernetes for containerization and orchestration, and AWS for deploying and managing cloud infrastructure.\n\nI believe that code is a reflection of how humans think and perceive the world. Writing code is more than just syntax — it’s an art and a philosophy that leverages the power of computers to help humans accelerate their processes and solve their problems`;
+// Bio/About Me section content ******************************************************************************
+export const BIO: string = `I am a software engineering student specialized in backend architecture, API design, and cloud-based systems, with a hand-on experience in building scalable applications using: \nReact/Angular for interactive user interfaces, TypeScript for type-safe coding, Java/Spring Boot for robust server-side applications, PostgreSQL/Oracle databases for efficient data management, docker/Kubernetes for containerization and orchestration, and AWS for deploying and managing cloud infrastructure.\n\nI believe that code is a reflection of how humans think and perceive the world. Writing code is more than just syntax — it’s an art and a philosophy that leverages the power of computers to help humans accelerate their processes and solve their problems`;
 
+// Projects section content **********************************************************************************
 export const PROJECTS: ProjectType[] = [
 	{
 		image: "/images/ai.jpg",
@@ -79,27 +48,31 @@ export const PROJECTS: ProjectType[] = [
 	},
 ];
 
+// Experience section content ********************************************************************************
 export const EXPERIENCE: ExperienceType[] = [
-    {
+	{
 		title: "Software Engineer",
 		companyName: "Safarelec",
-        companyLogo: "/images/safarelec.png",
+		companyLogo: "/images/safarelec.png",
 		type: "intership",
 		startDate: "January 2023",
 		endDate: "December 2023",
-        mission: "As a Software Engineer at Safarelec, I work on an internal intervention management system that tracks daily operations and employee performance. I built this system using React with TypeScript for the user interface, and Node.js with NestJS to develop scalable, maintainable, server-side applications based on a microservices architecture"
+		mission:
+			"As a Software Engineer at Safarelec, I work on an internal intervention management system that tracks daily operations and employee performance. I built this system using React with TypeScript for the user interface, and Node.js with NestJS to develop scalable, maintainable, server-side applications based on a microservices architecture",
 	},
-    {
+	{
 		title: "Graphic Designer",
 		companyName: "LDX Club",
 		companyLogo: "/images/ldx.jpeg",
 		type: "remote",
 		startDate: "January 2022",
 		endDate: "December 2024",
-		mission: "As a Graphic Designer at LDX Club, my mission was to design creative logos, social media posts, and visual assets that strengthened the brand’s identity and engagement"
+		mission:
+			"As a Graphic Designer at LDX Club, my mission was to design creative logos, social media posts, and visual assets that strengthened the brand’s identity and engagement",
 	},
 ];
 
+// Education section content *********************************************************************************
 export const EDUCATION: EducationType[] = [
 	{
 		schoolName: "Faculty of Sciences and Techniques of Mohammedia",
@@ -119,13 +92,15 @@ export const EDUCATION: EducationType[] = [
 	},
 ];
 
+// Certifications section content *****************************************************************************
 export const CERTIFICATIONS: CertificationType[] = [
 	{
 		title: "Oracle Certified Professional: Java SE 21 Developer",
 		issuer: "Oracle",
 		issuerLogo: "/images/oracle.png",
 		issueDate: "March 2023",
-		certificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=6E8AC25A3625804722CA05CC2FD21A3838801E4318D2D41AACAD094A19F70C4C",
+		certificationLink:
+			"https://catalog-education.oracle.com/ords/certview/sharebadge?id=6E8AC25A3625804722CA05CC2FD21A3838801E4318D2D41AACAD094A19F70C4C",
 		readMoreLink: "",
 	},
 	{
@@ -133,7 +108,8 @@ export const CERTIFICATIONS: CertificationType[] = [
 		issuer: "Oracle",
 		issuerLogo: "/images/oracle.png",
 		issueDate: "March 2023",
-		certificationLink: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=941DF532B29C340A52AB6718480FFB67A57236CF322D546EA08AB4DFAE8AA601",
+		certificationLink:
+			"https://catalog-education.oracle.com/ords/certview/sharebadge?id=941DF532B29C340A52AB6718480FFB67A57236CF322D546EA08AB4DFAE8AA601",
 		readMoreLink: "",
 	},
 	{
@@ -141,37 +117,48 @@ export const CERTIFICATIONS: CertificationType[] = [
 		issuer: "Cisco",
 		issuerLogo: "/images/cisco.png",
 		issueDate: "March 2023",
-		certificationLink: "https://www.credly.com/badges/a06d8f36-0f0c-4b73-a323-f4399ff9dbda/linked_in_profile",
+		certificationLink:
+			"https://www.credly.com/badges/a06d8f36-0f0c-4b73-a323-f4399ff9dbda/linked_in_profile",
 		readMoreLink: "",
 	},
 ];
 
+// Skills section content ************************************************************************************
 export const SKILLS: SkillType[] = [
 	{
 		name: "Listening",
-		description: "Ability to actively understand and interpret spoken language."
+		description:
+			"Ability to actively understand and interpret spoken language.",
 	},
 	{
 		name: "Problem-Solving",
-		description: "Capacity to analyze issues and develop effective solutions."
+		description: "Capacity to analyze issues and develop effective solutions.",
 	},
 	{
 		name: "Time Management",
-		description: "Skill in organizing and planning how to divide time between activities."
+		description:
+			"Skill in organizing and planning how to divide time between activities.",
 	},
 	{
 		name: "Teamwork",
-		description: "Ability to work collaboratively with others to achieve common goals."
+		description:
+			"Ability to work collaboratively with others to achieve common goals.",
 	},
 	{
 		name: "Adaptability",
-		description: "Capacity to adjust to new conditions and environments effectively."
+		description:
+			"Capacity to adjust to new conditions and environments effectively.",
 	},
 ];
 
+// Contact section content ***********************************************************************************
 export const CONTACT: ContactType = {
 	email: "ayyoubelkouri.com",
 	phone: "+212 656690355",
 	linkedin: "https://www.linkedin.com/in/ayyoub",
 	github: "https://github.com/ayyoub",
 };
+
+// Footer section content ************************************************************************************
+export const YOUR_WORD =
+	"Becoming an expert won’t happen overnight, but with a bit of patience, you’ll get there";

@@ -1,6 +1,13 @@
 import { EXPERIENCE } from "../data";
 
 export function Experience() {
+	// Check if EXPERIENCE array is empty, return null to avoid rendering the section
+	const isExperienceEmpty = EXPERIENCE.length === 0;
+	if (isExperienceEmpty) {
+		return null;
+	}
+
+	// Render the Experience section with EXPERIENCE content
 	return (
 		<section className="text-zinc-200">
 			<h2 className="text-3xl italic mb-1">Experience</h2>
@@ -16,6 +23,9 @@ export function Experience() {
 							className="w-12 h-12 object-cover rounded-sm mb-2"
 							src={exp.companyLogo}
 							alt={exp.companyName}
+							onError={(e) => {
+								e.currentTarget.src = "/images/default-company.jpeg";
+							}}
 						/>
 
 						<div className="flex flex-col gap-1">

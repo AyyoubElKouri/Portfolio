@@ -1,6 +1,19 @@
 import { CONTACT } from "../data";
 
 export function Contact() {
+	// Check if CONTACT object has no properties, return null to avoid rendering the section
+	const isEmptyContact =
+		!CONTACT.email &&
+		!CONTACT.phone &&
+		!CONTACT.linkedin &&
+		!CONTACT.github &&
+		!CONTACT.twitter;
+
+	if (isEmptyContact) {
+		return null;
+	}
+
+	// Render the Contact section with CONTACT content
 	return (
 		<section className="text-zinc-200">
 			<h2 className="text-3xl italic"> Contact </h2>
